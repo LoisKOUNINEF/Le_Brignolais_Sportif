@@ -7,7 +7,7 @@
 
           </div>
 
-
+      <div class="col-6 col-lg-2 offset-lg-1 mb-3 ">
           <h5>Team</h5>
           <ul class="list-unstyled ">
             <li>
@@ -48,12 +48,19 @@
 
         <ul class="social-links icon-content list-unstyled">
           <li><%= link_to image_tag('icone/footer-lbs.png'), root_path %></li>
-          	<a href="https://www.facebook.com/profile.php?id=100069786000800"><i class="fab fa-facebook-f"></i></a>
-  	 				<a href="https://twitter.com/lbs83170"><i class="fab fa-twitter"></i></a>
-  	 				<a href="#"><i class="fab fa-instagram"></i></a>
-  	 				<a href="#"><i class="fab fa-linkedin-in"></i></a>
+           <%= link_to 'https://www.facebook.com/profile.php?id=100069786000800'  do%>
+           <i class="fab fa-facebook-f"></i>
+            <%end %>
+            <%= link_to 'https://twitter.com/lbs83170', class:"" do%>
+           <i class="fab fa-twitter"></i>
+            <%end %>
+            <%= link_to '#'  do%>
+           <i class="fab fa-instagram"></i>
+            <%end %>
+            <%= link_to '#'  do%>
+           <i class="fab fa-linkedin-in"></i>
+            <%end %>
              </ul>
-
         </div>
            
         <div class="col-12 col-lg-10 offset-lg-1 mb-3 mt-lg-4">
