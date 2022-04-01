@@ -4,14 +4,14 @@ class CommentsController < ApplicationController
   def create
     @comment = @commented_on.comments.new comment_params
     @comment.user = current_user
-    if @comment.save
+    if @comment.save  && !@comment.parent_id.nil?
       original_comment = Comment.find(@comment.parent_id)
       author = User.find(original_comment.user_id)
       CommentMailer.new_comment(author, @comment).deliver_now
-      redirect_to @commented_on, notice: "Commentaire ajouté."
     else
       flash[:notice] = @comment.errors.full_messages.to_sentence
     end
+    redirect_to @commented_on, notice: "Commentaire ajouté."
   end
 
   private

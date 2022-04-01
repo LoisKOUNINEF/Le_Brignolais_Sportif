@@ -23,5 +23,5 @@
     <%= render partial: "comments/form", locals: {commented_on: @article, parent: nil} %>
   <% end %>
   <br>
-  <%= button_to "Retour à l'accueil", articles_path, class:"btn btn-light" %>
+  <%= link_to "Retour à l'accueil", articles_path, class:"btn btn-light" %>
 </div>
