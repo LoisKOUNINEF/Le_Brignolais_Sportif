@@ -20,12 +20,6 @@
 // adding aos js library
 
 
-//window.addEventListener("load",function()
-//{
-    //AOS.init();
-
-//}
-//);
 
 // ##################################
 

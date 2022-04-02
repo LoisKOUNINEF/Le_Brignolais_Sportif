@@ -2,7 +2,6 @@
   .icons-wrapper {
     display: flex;
     align-items: center;
-    /* justify-content: space-evenly; */ 
     margin: 32px 0;
     margin-left: 50px;
   }
