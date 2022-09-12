@@ -1,0 +1,39 @@
+<header class="p-3 bg-nav header">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+       
+        <div class="text-center mb-md-2 mb-sm-2 col-md-12 col-sm-12 col-lg-1"> 
+          <%= link_to image_tag('icone/navbar-icon.png'), root_path %>
+        </div>
+
+      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+      </ul>
+     
+      <div class="text-end">
+
+      <%  if user_signed_in? %>
+
+        <%# Navbar administrateur  %>
+        <%  if current_user && current_user.admin %>
+        <%= link_to 'Dashboard', admin_root_path, class:"btn btn-nav me-2" %>
+        <% end %>
+
+        <% if !current_user.subscriber && !current_user.admin %>
+        <%= link_to "S'abonner", pricing_index_path, class:"btn btn-nav me-2" %>
+        <% end %>
+
+        <%# Navbar utilisateur %>
+
+        <%= link_to "Mon compte", edit_user_registration_path, class:"btn btn-nav me-2" %>
+        <%= link_to "Se déconnecter", destroy_user_session_path , method: :delete, class:"btn btn-signup"%>
+
+      <% else %>
+      
+        <%= link_to "Se connecter", new_user_session_path , class:"btn btn-nav me-2"%>
+        <%= link_to "S'inscrire", new_user_registration_path , class:"btn btn-signup"%>
+      <% end %>
+
+      </div>
+    </div>
+  </div>
+</header>

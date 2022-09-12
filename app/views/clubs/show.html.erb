@@ -1,0 +1,29 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+    <p>
+      <strong>Name:</strong>
+      <%= @club.name %>
+    </p>
+
+    <p>
+      <strong>Description:</strong>
+      <%= @club.description %>
+    </p>
+
+    <p>
+      <strong>Image url:</strong>
+      <%= @club.image_url %>
+    </p>
+
+    <p>
+      <strong>Category:</strong>
+      <%= @club.category %>
+    </p>
+
+    <p>
+      <strong>Link to:</strong>
+      <%= @club.link_to %>
+    </p>
+
+  <%= link_to 'Back', clubs_path %>
+</div>

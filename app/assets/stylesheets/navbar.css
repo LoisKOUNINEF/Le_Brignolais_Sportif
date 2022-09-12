@@ -1,0 +1,158 @@
+/* = require_self */
+
+
+
+/* #########################################################  */
+
+/* STYLE STICKY-NAVBAR  */
+
+
+
+.header {
+    padding: 12px 0;
+    background-color: var(--dark-light);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+}
+
+
+.header::before
+{
+
+    content: '';
+    background-color: var(--dark-light);
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    box-shadow: var(--shadow);
+    z-index: -1;
+    transition: transform 0.5s ease;
+    transform: translateY(-100%);
+}
+
+.header .sticky::before
+{
+
+    transform: translateY(0%);
+
+}
+
+
+/* #########################################################  */
+
+/* STYLE NAVBAR  */
+
+.bg-nav {
+    background-color: var(--prim)!important;
+}
+.pg-nav {
+    background-color: transparent!important;
+}
+.btn {
+    font-family: Poppins, Arial, Helvetica, sans-serif !important;
+}
+
+.btn-nav {
+    color: var(--second)!important;
+    border-color: var(--second)!important;
+}
+
+.btn-nav:hover {
+    color: var(--prim)!important;
+    background-color: var(--second) !important;
+
+
+}
+
+.btn-signup {
+    color: var(--prim)!important;
+    border-color: var(--second) !important;
+    background-color: var(--second) !important;
+}
+.btn-signup:hover {
+    color: var(--second)!important;
+    border-color: var(--prim) !important;
+    background-color: var(--prim) !important;
+}
+
+.btn-nav2 {
+    color: var(--prim)!important;
+    border-color: var(--prim)!important;
+    width: 110px!important;
+  }
+  
+  .btn-nav2:hover {
+    color: var(--second)!important;
+    background-color: var(--prim) !important;
+  }
+  
+
+input[type="search"], input[type="search"]::selection {
+
+    background-color : var(--second) !important; 
+  }
+  .searchbar {
+    border-color: var(--tert)!important;
+    font-family: Poppins!important;
+    
+
+}
+
+#searchbar {
+    margin-left: 20px!important;
+}
+#searchbar {
+    max-width: 350px!important;
+    
+}
+
+  .cart {
+      border: none!important;
+      
+      background-color: var(--prim)!important;
+
+      padding-right: 15px!important;
+      
+  }
+
+
+/* #########################################################  */
+
+
+
+/* STYLE NAVBAR-MENU  */
+
+
+.yenox {
+    display: flex; flex-direction: row;
+}
+
+
+
+/* #########################################################  */
+
+/* RESPONSIVE STICKY-NAVBAR  */
+
+
+@media screen and (min-width: 991px){
+    .header {
+    padding: 12px 0;
+    background-color: var(--dark-light);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .header {
+        position: relative;
+    }
+}

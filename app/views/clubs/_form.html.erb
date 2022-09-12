@@ -1,0 +1,42 @@
+<%= form_with(model: club, local: true) do |form| %>
+  <% if club.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(club.errors.count, "error") %> prohibited this club from being saved:</h2>
+
+      <ul>
+      <% club.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name, value = "Nom du club" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description, value = "Description" %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image_url, value = "Lien de l'image" %>
+    <%= form.text_field :image_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :category, value = "Catégorie" %>
+    <%= form.text_field :category %>
+  </div>
+
+  <div class="field">
+    <%= form.label :link_to, value = "Page du club"%>
+    <%= form.text_field :link_to %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit value = "Créer un événement"%>
+  </div>
+<% end %>

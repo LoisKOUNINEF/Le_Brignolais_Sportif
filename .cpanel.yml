@@ -1,0 +1,4 @@
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/mrcl5854/repositories/Le_Brignolais_Sportif
+    - /bin/cp -R images $DEPLOYPATH

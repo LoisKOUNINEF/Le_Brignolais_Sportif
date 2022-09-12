@@ -1,0 +1,22 @@
+/* = require_self */
+
+body {
+    background-color: var(--second)!important;
+    color: white!important;
+    margin: 0;
+}
+
+ h1,h2,h3 {
+    color: var(--prim);
+    font-family: poppins;
+
+}
+
+h5,p {
+    font-family: montserrat;
+}
+
+label {
+
+    color: var(--prim);
+}

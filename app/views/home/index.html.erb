@@ -1,0 +1,54 @@
+<header class="l-header">
+  <nav class="nav bd-grid">
+    <div>
+      <h1 class="nav__logo">Le Brignolais Sportif</h1>
+    </div>
+                
+    <div class="nav__toggle" id="nav-toggle">
+      <i class='bx bx-menu'></i>
+    </div>
+
+    <div class="nav__menu" id="nav-menu">
+      <div class="nav__close" id="nav-close">
+        <i class='bx bx-x'></i>
+      </div>
+
+      <ul class="nav__list">
+        <li class="nav__item"><%= link_to "Actualités" , articles_path , class:"nav__link active n" %></li>
+        <li class="nav__item"><%= link_to "Agenda" , events_path, class:"nav__link active n" %></li>
+        <li class="nav__item"><%= link_to "Partenaires" , partners_path, class:"nav__link active n" %></li>
+        <li class="nav__item"><%= link_to "Contact" , contact_path, class:"nav__link active n" %></li>
+      </ul>
+
+    </div>
+  </nav>
+</header>
+
+<main class="l-main">
+  <section class="home" id="home">
+    <div class="home__container bd-grid">
+      <div class="home__img move">
+        <%= image_tag("contacts/brignolais_transparent.png") %>  
+      </div>
+
+      <div class="home__data">
+        <h1 class="home__title">Le Brignolais Sportif</h1>
+          <p class="home__description">Le Brignolais Sportif, c'est le journal bimestriel des associations sportives brignolaises.<br>
+          Un journal d'environ 40 pages totalement gratuit !<br><br>
+          Au travers de notre site, vous trouverez tout ce qui est relatif à la vie sportive brignolaise ;<br>
+          les actualités et les évènements à venir, l'édition numérique du journal, les résultats des clubs .. <br>
+        <br>
+          N'hésitez pas à vous abonner si vous souhaitez nous soutenir <br>
+          et échanger avec les membres de la communauté !
+        </p>
+                          
+        <%  if user_signed_in? && current_user.subscriber %>
+          <%= link_to "Continuer sur le site" , articles_path ,class:"home__button" %>
+        <% else %>
+          <%= link_to "👉 Abonne-toi ici!" , pricing_index_path ,class:"home__button" %>
+          <%= link_to "Continuer ➲" , articles_path ,class:"home__button" %>
+        <% end %>
+      </div>
+    </div>
+  </section>
+</main>

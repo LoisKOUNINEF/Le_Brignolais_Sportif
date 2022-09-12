@@ -1,0 +1,33 @@
+<div class="container">
+
+	<div class="text-center">
+		<h1>L'annuaire des associations sportives brignolaises !</h1>
+		<h5>
+			Accédez aux informations des clubs en cliquant sur leur nom.
+		</h5>
+		<hr>
+	</div>
+
+	<div class="row">
+		<% @clubs.each do |club| %>
+		<div class="col-lg-2 mb-4">
+			<div class="row">
+				<div class="col-md-12">
+					<%= image_tag club.image_url, class:"img-fluid rounded-circle" %>		
+				</div>
+				<div class="col-md-12 text-center">
+					<div class="pt-2">
+						<h4 class="mt-4 font-weight-medium mb-0">
+							<%= club.category %>
+						</h4>
+						<h5 class="subtitle mb-3">
+							<%= link_to "Site internet", club.link_to, class:"btn btn-signup" %>
+						</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+		<% end %>
+	</div>
+
+</div>

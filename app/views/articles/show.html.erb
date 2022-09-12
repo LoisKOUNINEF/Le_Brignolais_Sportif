@@ -1,0 +1,31 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+
+  <h3 class="text-center">
+    <strong><%= @article.title %></strong>  
+  </h3>
+
+  <p>
+    <strong><u>Categorie :</u></strong>
+    <%= @article.category %>
+  </p>
+  <div class="card border-light">
+      <%= image_tag @article.image_url %>
+  </div>  
+
+  <div class="card">
+    <div class="card-body b">
+      <p>
+      <%= simple_format(@article.content) %> 
+      </p>
+    </div>
+  </div>
+  
+  <%= render partial: "comments/comments", locals: {commented_on: @article, parent: nil} %>
+  <hr>
+  <% if current_user && current_user.subscriber || current_user && current_user.admin %>
+    <%= render partial: "comments/form", locals: {commented_on: @article, parent: nil} %>
+  <% end %>
+  <br>
+  <%= link_to "Retour à l'accueil", articles_path, class:"btn btn-light" %>
+</div>
