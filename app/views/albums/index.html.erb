@@ -5,7 +5,7 @@
 		<hr>
 	</div>
 	<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-		<% @albums.each do |album| %>
+		<% @albums.reverse.each do |album| %>
 		<div class="col">
 			<div class="card shadow-sm">
 				<%= link_to (image_tag album.image_url), album %>
