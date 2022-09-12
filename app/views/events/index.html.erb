@@ -6,7 +6,7 @@
 	</div>
 	
 	<div class="row row-cols-2 row-cols-sm-2 row-cols-md-2 g-2">
-		<% @events.each do |event| %>
+		<% @events.reverse.each do |event| %>
 		<div class="col">
 			<div class="card shadow-sm">
 				<%= link_to (image_tag event.image_url), event %>

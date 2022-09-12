@@ -11,7 +11,7 @@
   </thead>
 
   <tbody>
-    <% @comments.each do |comment| %>
+    <% @comments.reverse.each do |comment| %>
       <tr>
         <td><%= comment.content %></td>
         <td><%= link_to 'Show', comment %></td>
