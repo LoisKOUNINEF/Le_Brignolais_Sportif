@@ -1,0 +1,9 @@
+Chers lecteurs,
+Voici les derniers articles parus sur le journal en ligne du Brignolais Sportif.
+
+
+<% @article.each do |article| %>
+  <%= article.title %>
+<%= article.category %>
+<% end %>
+

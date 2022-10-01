@@ -1,0 +1,17 @@
+<div class="container">	
+	<div class="text-center">
+		<h1>A vos agendas ! <br> Voici les rendez-vous brignolais à ne pas manquer</h1>
+		<p>(Cliquez sur l'image pour réagir aux évènemenents!) </p>
+		<hr>
+	</div>
+	
+	<div class="row row-cols-2 row-cols-sm-2 row-cols-md-2 g-2">
+		<% @events.reverse.each do |event| %>
+		<div class="col">		
+			<div class="card shadow-sm height">
+				<%= link_to (image_tag event.image_url), event  %>
+			</div>
+		</div>
+		<% end %>
+	</div>
+</div>

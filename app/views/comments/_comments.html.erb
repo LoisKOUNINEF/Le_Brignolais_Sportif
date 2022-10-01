@@ -1,0 +1,72 @@
+<div class="container"><hr>
+  <h2>Commentaires</h2>
+  <% commented_on.comments.where(parent_id: nil).each do |comment| %>
+
+  <div class="card border-light card-comment">
+    <div class="card-header comment">
+      <%= comment.user.name %> le <%= comment.created_at.strftime("%d-%m-%Y") %>
+    </div>
+    <div class="card-body">
+      <p class="comment"><%= comment.content %></p>
+    </div>
+
+    <div class="card-footer bg-transparent border-dark">
+      <% if current_user && current_user.subscriber %>
+        <button class="btn btn-light comment-form-display">Répondre</button>
+        <div class="comment-form">
+          <%= render partial: 'comments/form', locals: { commented_on: @article || @event || @album, parent: comment } %>
+        </div>
+      <% end %>
+      <br>
+
+      <% comment.comments.each do |c1| %>
+        <div class="card border-light card-comment mt-2">
+          <div class="card-header comment">
+            <%= c1.user.name %> le <%= c1.created_at.strftime("%d-%m-%Y") %>
+          </div>
+          <div class="card-body">
+            <p class="comment"><%= c1.content %></p>
+          </div>
+        
+          <div class="card-footer bg-transparent border-dark">
+              <% if current_user && current_user.subscriber %>
+                <button class="btn btn-light comment-form-display">Répondre</button>
+                <div class="comment-form">
+                  <%= render partial: 'comments/form', locals: { commented_on: @article || @event || @album, parent: c1 } %>
+                </div>
+              <% end %>
+              <br>
+  
+            <% c1.comments.each do |c2| %>
+              <div class="card border-light card-comment">
+                <div class="card-header comment">
+                  <%= c2.user.name %> le <%= c2.created_at.strftime("%d-%m-%Y") %>
+                </div>
+                <div class="card-body">
+                 <p class="comment"><%= c2.content %></p>
+                </div>
+              </div>
+            <% end %>
+  
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <br>
+  <% end %>
+</div>
+
+
+
+<!-- to display comment form on click -->
+<script>
+  document.querySelectorAll('.comment-form-display').forEach((el) => {
+    el.addEventListener('click', (ev) => {
+      ev.preventDefault();
+      el.nextElementSibling.style = 'display: block;';
+    }
+    )
+  }
+  );
+</script>

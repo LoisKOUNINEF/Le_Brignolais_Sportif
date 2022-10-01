@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="center">
+  <br><br>
+
+    <div class="text-center row justify-content-center">
+      <h1> Se connecter </h1>
+
+        <div class="col-xs-2 col-sm-6 col-md-6 col-lg-6">
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <%= render "devise/shared/error_messages", resource: resource %>
+              <br>
+
+              <div class="form-group">
+               <%= f.label :email %><br />
+                <br>
+               <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control"  %>
+                <small id="emailHelp" class="form-text text-muted">Vos coordonnées ne seront jamais partagées.</small>
+              </div>
+              <br>
+
+              <div class="form-group">
+                <%= f.label :password %><br />
+               <br>
+                <%= f.password_field :password, autocomplete: "current-password", class:"form-control"%>
+                <br>
+              </div>
+
+              <% if devise_mapping.rememberable? %>
+               <div class="field">
+                  <%= f.check_box :remember_me %>
+                 <%= f.label :remember_me %>
+               </div>
+             <% end %>
+
+             <div class="actions">
+               <%= f.submit "Se connecter", class:"btn btn-nav" %>
+             </div>
+             
+           <% end %>
+           <hr>
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
+    <br><br>
+  </div>
+</div>
+<br><br><br>

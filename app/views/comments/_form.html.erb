@@ -1,0 +1,18 @@
+<div class="container"><br>
+<h2>Ajouter un commentaire</h2>
+  <%= form_for [commented_on, Comment.new] do |f| %>
+
+    <% if !parent.nil? %>
+      <input type="hidden" name="comment[parent_id]" value="<%= parent.id %>">
+    <% end %>
+
+  <div class="card">
+    <div class="card-header comment"> 
+      <%= f.text_area :content, class: "form-control", placeholder: "Ajouter un commentaire" %>
+    </div>
+    <div class="card-footer bg-transparent border-dark">
+      <%= f.submit class: "btn btn-primary", value: "Commenter"%>
+    </div>
+  </div>
+  <% end %>
+</div>

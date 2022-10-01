@@ -1,0 +1,36 @@
+<div class="container">
+  <%= form_with(model: event, local: true) do |form| %>
+  <% if event.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+    <ul>
+      <% event.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+</div>
+
+<div class="container">
+  <div class="field">
+    <%= form.label :title, value = "Titre :" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :category, value = "Catégorie" %>
+    <%= form.text_field :category %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image_url, value = "Illustration :" %>
+    <%= form.text_field :image_url %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit value = "Créer un événement" %>
+  </div>
+  <% end %>
+</div>

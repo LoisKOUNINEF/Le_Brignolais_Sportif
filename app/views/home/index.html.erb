@@ -1,0 +1,21 @@
+<main class="l-main">
+  <section class="home mt-1" id="home">
+  <br><br><br>
+    <div class="home__container bd-grid">
+      <div class="home__img move">
+        <%= image_tag("contacts/brignolais_transparent.png") %>  
+      </div>
+
+      <div class="home__data">
+        <h1 class="home__title">Le Brignolais Sportif</h1>
+          <p class="home__description">Le site internet définitif est bientôt disponible.<br> 
+          Vous pouvez malgré tout dès à présent commencer à le consulter.<br>
+        <br>
+          Au travers de notre site, vous trouverez tout ce qui est relatif à la vie sportive brignolaise ;<br>
+          les actualités et les évènements à venir, l'édition numérique du journal, les résultats des clubs ..
+        </p>
+          <%= link_to "Continuer sur le site" , articles_path ,class:"home__button my-3" %>
+      </div>
+    </div>
+  </section>
+</main>

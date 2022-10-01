@@ -1,0 +1,13 @@
+ /* = require_self */
+
+.subcomment {
+  padding-left: 30px;
+}
+
+.comment-form {
+  display: none;
+}
+
+.card-comment {
+  background-color: transparent!important;
+}

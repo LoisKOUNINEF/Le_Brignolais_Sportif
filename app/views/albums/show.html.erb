@@ -1,0 +1,28 @@
+<div class="container">
+  <p id="notice"><%= notice %></p><br/>
+  <h3>
+    &nbsp&nbsp&nbsp&nbsp<strong><%= @album.title %></strong>
+  </h3><br/>
+
+  <p>
+    &nbsp&nbsp<strong>Categorie :</strong>
+    <%= @album.category %>
+  </p><br/>
+
+  <p>
+    <%= image_tag @album.image_url %>
+  </p>
+
+  <p>
+    <strong>Voir l'album :</strong>&nbsp&nbsp
+    <%= link_to "👉 Album photo", @album.link_to, class:"btn btn-primary" %>
+  </p>
+
+  <%= render partial: "comments/comments", locals: {commented_on: @album, parent: nil} %>
+  <hr>
+  <% if current_user && current_user.subscriber || current_user && current_user.admin %>
+  <%= render partial: "comments/form", locals: {commented_on: @album, parent: nil} %>
+  <% end %>
+  <br>
+  <%= link_to "Retour à la liste des albums", albums_path, class:"btn btn-light"%>
+</div>

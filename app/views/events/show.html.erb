@@ -1,0 +1,24 @@
+<div class="container">
+
+  <%# <h2 class="text-center"> %>
+    <strong><%#= @event.title %></strong>
+  <%# </h2><br/> %>
+
+  <%# <p> %>
+    <%# &nbsp&nbsp<strong>Categorie :</strong> %>
+    <%#= @event.category %>
+  <%# </p> %>
+
+  <p>
+    <%= image_tag @event.image_url %>
+  </p>
+
+  <%= render partial: "comments/comments", locals:{commented_on: @event, parent: nil} %>
+  <hr>
+  <% if current_user && current_user.subscriber || current_user && current_user.admin %>
+  <%= render partial: "comments/form", locals:{commented_on: @event, parent: nil} %>
+
+  <% end %>
+  <br>
+  <%= link_to "Retour à la liste des évènements", events_path, class:"btn btn-light" %>
+</div>

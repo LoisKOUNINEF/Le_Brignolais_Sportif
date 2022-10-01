@@ -1,0 +1,16 @@
+<div class="container">	
+	<div class="text-center">
+		<h1>Les derniers résultats</h1>
+		<hr>
+	</div>
+	
+	<div class="row row-cols-2 row-cols-sm-2 row-cols-md-2 g-2">
+		<% @results.reverse.each do |result| %>
+		<div class="col">
+			<div class="card shadow-sm height:200px width:200px">
+				<%= (image_tag result.image_url) %>
+			</div>
+		</div>
+		<% end %>
+	</div>
+</div>

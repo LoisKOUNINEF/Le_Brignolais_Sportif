@@ -1,0 +1,53 @@
+<div class="container">
+ <div class="center">
+  <br><br>
+   
+    <div class="text-center row justify-content-center">
+     <h1>S'inscrire</h1>
+      
+      <div class="col-xs-2 col-sm-6 col-md-6 col-lg-6">
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
+          <br>
+
+            <div class="form-group">
+              <%= f.label :name %><br />
+              <%= f.text_field :name, autofocus: true, class:"form-control" %>
+            </div>
+          <br/>
+
+            <div class="form-group">
+              <%= f.label :email %><br />
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control" %>
+            </div>
+          <br>
+
+            <div class="form-group">
+              <%= f.label :mot_de_passe %>
+              <% if @minimum_password_length %> <br>
+              <em>(<%= @minimum_password_length %> caractères minimum)</em>
+              <% end %><br /> 
+              <%= f.password_field :password, autocomplete: "new-password", class:"form-control" %>
+            </div>
+          <br>
+
+            <div class="form-group">
+              <%= f.label :confirmation_du_mot_de_passe %><br />
+              <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control" %>
+            </div>
+          <br>
+
+            <div class="actions">
+              <%= f.submit "S'inscrire", class:"btn btn-nav" %>
+            </div>
+            <% end %>
+            <hr>
+            
+        <%= render "devise/shared/links" %>
+      </div>
+      </div>
+    <br><br>
+    </div>
+  </div>
+</div>
+<br><br><br>

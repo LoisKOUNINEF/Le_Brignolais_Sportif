@@ -1,0 +1,10 @@
+<p> Chers lecteurs, </p>
+<p> Voici les derniers articles parus sur le journal en ligne du Brignolais Sportif. </p>
+
+<br/>
+<table>
+<% @article.each do |article| %>
+  <h3><%= article.title %></h3>
+  <p><%= article.category %></p>
+<% end %>
+</table>
