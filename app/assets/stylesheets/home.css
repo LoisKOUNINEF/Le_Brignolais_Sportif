@@ -105,8 +105,8 @@ img{
   position: relative;
   padding-top: 1.5rem;
   justify-self: center;
-  width: 250px;
-  height: 150px;
+  /* width: 100px;
+  height: 150px; */
 }
 
 .home__img img{
@@ -189,7 +189,7 @@ img{
   }
 
   .home__img img{
-    width: 375px;
+    width: 100px;
   }
 
   .home__button{
@@ -216,7 +216,7 @@ img{
   }
 
   .home__img{
-    width: 604px;
+    width: 466px;
     height: 466px;
   }
 

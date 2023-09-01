@@ -3,20 +3,13 @@
  /* STYLE BANNER  */
 
  .banner {
-
     height: 562px;
-
     background:linear-gradient( rgba(107, 105, 105, 0.5),rgba(107, 105, 105, 0.5),rgba(107, 105, 105, 0.5),var(--second)), url("https://i.imgur.com/c6MjHl2.png");
-
-
     background-repeat: no-repeat;
-
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-
-
   }
 
 .hero-text {

@@ -28,3 +28,10 @@
 
 - Ordre aléatoire
 ✔️ Aviva -> Abeille Assurances ( + link to)
+
+# Septembre 
+Changez les logos 
+Changer l'image d'accueil 
+Mise à jour des partenaires
+✔️ Changer l'adresse du mailer
+✔️ Bouton 'Associations'

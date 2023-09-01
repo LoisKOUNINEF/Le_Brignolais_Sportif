@@ -42,22 +42,13 @@
             </div>
 
          <!-- Side widget-->
-
-         <div class="card mb-4" style="max-width: 18rem;">
+         <% 3.times do %>
+          <div class="card" style="max-width: 18rem;">
             <div class="card-body">
-              <%= image_tag (Partner.all.sample).image_url, size: 100*50 %>
+              <%= image_tag (Partner.all.sample).image_url, size: 75*50 %>
             </div>
          </div>
-         <div class="card mb-4" style="max-width: 18rem;">
-            <div class="card-body">
-              <%= image_tag (Partner.all.sample).image_url, size: 100*50 %>
-            </div>
-         </div>
-         <div class="card mb-4" style="max-width: 18rem;">
-            <div class="card-body">
-              <%= image_tag (Partner.all.sample).image_url, size: 100*50 %>
-            </div>
-         </div>
+         <% end %>
          <!-- Partners display-->
       </div>
    </div>
